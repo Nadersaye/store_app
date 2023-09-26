@@ -1,15 +1,15 @@
 import '../helper/api.dart';
 import '../models/all_prodect_model.dart';
 
-class GetAllProductes {
-  Future<ProductModel> getAllProduct(
+class UpdateProduct {
+  Future<ProductModel> updateProduct(
       {required String title,
       required String price,
       required String description,
       required String image,
       required String category,
       required int id}) async {
-    List<dynamic> data = await ApiService()
+    Map<String, dynamic> data = await ApiService()
         .put(uri: 'https://fakestoreapi.com/products/$id', body: {
       "title": title,
       "price": price,
